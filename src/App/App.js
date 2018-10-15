@@ -49,7 +49,7 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <div className="title">Contact List App</div>
+        <div className="title">Lista Kontaktów :) </div>
         <ContactForm addContactsFunction={this.addContact} />
         <ul> {
           this.state.contacts.map(
@@ -60,7 +60,7 @@ class App extends Component {
                 <span onClick={() => this.toggleContactFavorites(contact.id)}>&#9734;</span>}
                 {contact.name} {contact.surname} <br /> {contact.number}
                 
-                <button onClick={() => this.removeContact(contact.id)}>Delete contact</button>
+                <button onClick={() => this.removeContact(contact.id)}>Usuń kontakt</button>
               </li>
             )
           )
