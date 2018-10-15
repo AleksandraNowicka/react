@@ -3,24 +3,44 @@ import React, { Component } from 'react';
 import './App.css';
 import ContactForm from '..'
 
+
 class App extends Component {
+  
+ state = {
+   contacts: JSON.parse(localStorage.getItem('contacts') || '[]'),
+   previousState: null
+ }
+
+
+ } 
+  
+
+
+ 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div className="title">Contact List App</div>
+          <ContactForm addContactsFunction={this.addContact} />
+          <ul> {
+            this.state.contacts.map(
+              contact => (
+                <li key={contact.id}>
+                {contact.isFavorite ?
+                <span onClick={() => this.toggleContactFavorites(contact.id)}>&#9733</span> :
+                <span onClick={() => this.toggleContactFavorites(contact.id)}>&#9733</span>
+                {contact.name} {contact.surname} <br /> {contact.number}
+                
+              
+              
+              }
+                
+                
+                </li>
+              )
+            )
+            
+            </ul>
       </div>
     );
   }
