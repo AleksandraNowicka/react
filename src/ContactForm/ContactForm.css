@@ -1,12 +1,10 @@
 input {
-width:
-height:
-margin-let:
-margin-top:
-
-
+  height: 80px;
+  width: 30%;
+  margin-left: 50px;
+  margin-top: 80px;
 }
 
 form button {
-  height:   
+  height: 80px;
 }

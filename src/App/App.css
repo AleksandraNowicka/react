@@ -1,15 +1,30 @@
 body {
-background: pink()
-}
-
-.tittle {
-
-}
-
-ul {
-
-}
-
-span {
+    background: pink;
+  }
   
-}
+  .title {
+    background: white;
+    width: 60%;
+    height: 120px;
+    margin: 0 auto;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 50px;
+    padding-top: 25px;
+  }
+  
+  ul {
+    background: purple;
+    padding-top: 80px;
+    padding-bottom: 20px;
+    line-height: 1,7em;
+    text-decoration: none;
+    list-style: none;
+    font-size: 50px;
+  }
+  
+  span {
+    color: yellow;
+    font-size: 60px;
+  
+  }

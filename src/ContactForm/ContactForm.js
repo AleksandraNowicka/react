@@ -3,24 +3,47 @@ import './ContactForm.css'
 
 class ContactForm extends Component {
 
-    state = {
-        contactData: '',
-        error: null
-    }
+  state = {
+    contactData: '',
+    error: null
+    
+  }
 
-    handleSubmit = event => {
 
-    }
 
-    handleChange = event => {
-
-    }
-
+handleSubmit = event => {
+  event.preventDefault()
+  if (this.state.contactData === '') {
+    this.setState({
+      error: new Error('Please add name, surename and number')
+    })
+    return;
+  }
+  this.props.addContactsFunction(this.state.contactData);
+  this.setState({contactData: '', error: null})
 }
-render() {
-    return (
 
+
+
+handleChange = event => {
+  this.setState({
+    contactData: event.target.value
+  })
+}
+
+
+
+  render() {
+    return (
+        <form onSubmit= {this.handleSubmit}>
+          {
+          this.state.error && <p>{this.state.error.message}</p>
+        }
+        <input value={this.state.contactData} onChange={this.handleChange}/>
+        <button>Add contact</button>
+      </form>
     )
+  }
 }
 
 export default ContactForm
